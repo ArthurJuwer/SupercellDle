@@ -4,17 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clash Royale</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="/script.js" defer></script>
 </head>
 <body>
-    <form action="" id="formCharacter">
-        <label for="name">Digite o nome do personagem para iniciarmos</label>
-        <input type="text" id="name" name="name" placeholder="Nome...">
-        <button type="submit">Cadastrar</button>
-    </form>
+    <main class="h-dvh flex flex-col items-center mt-40">
+        <form class="w-1/2 flex items-center flex-col gap-10" action="" id="formCharacter">
+            <label for="name">Digite o nome do personagem para iniciarmos</label>
+            <input class="border-black border-2" type="text" id="name" name="name" placeholder="Nome...">
+            <button class="border-black border-2" type="submit">Cadastrar</button>
+            <!-- <label class="text-sm" for="">Genero</label> -->
+            
+                
+                
+            
+            
+        </form>
+        <ul id="listaCharacter" class="flex flex-col gap-10 mt-10">
+          
+        </ul>
+    </main>
+    
 
-    <ul id="listaCharacter">
-        
-    </ul>
+    
 </body>
 </html>
