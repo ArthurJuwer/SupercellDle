@@ -9,7 +9,7 @@ app.use(cors())
 app.use(express.json())
 
 app.get("/clashroyale", (req, res) => {
-    db.query("SELECT id, nome, genero, tipo, raridade, elixir, lancamento, arena, ataque FROM clashroyale", (err, results) => {
+    db.query("SELECT id, foto, nome, genero, tipo, raridade, elixir, lancamento, arena, ataque FROM clashroyale", (err, results) => {
         if(err){
             console.error("Erro ao buscar dados: ", err)
             res.status(500).json({ erro: "Erro ao buscar dados"})
