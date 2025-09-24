@@ -1,3 +1,5 @@
+const ATRIBUTOS = ["foto", "genero", "tipo", "raridade", "elixir", "lancamento", "arena", "ataque"]
+
 const formCharacter = document.querySelector("#formCharacter")
 let cartaPrincipal = {}
 let primeiraCartaJogada = false
@@ -19,15 +21,13 @@ async function carregarResposta() {
 function animacaoListaInfo() {
     const ul = document.querySelector("#listaInfo")
 
-    const atributos = ["foto", "genero", "tipo", "raridade", "elixir", "lancamento", "arena", "ataque"]
-
-    for (let index = 0; index < atributos.length; index++) {
+    for (let index = 0; index < ATRIBUTOS.length; index++) {
         let div = document.createElement("div")
 
         div.classList.add("flex", "flex-col", "gap-2", "items-center", "justify-center")
 
         div.innerHTML += `
-                <li class="text-sm text-center w-24">${atributos[index]}</li>
+                <li class="text-sm text-center w-24">${ATRIBUTOS[index]}</li>
                 <span class="w-4/5 h-1 bg-black block"></span>
             `
         ul.appendChild(div)
@@ -49,9 +49,7 @@ async function mostrarCartaResposta() {
             let ul = document.createElement("ul")
             ul.classList.add("flex", "gap-10")
 
-            const atributos = ["foto", "genero", "tipo", "raridade", "elixir", "lancamento", "arena", "ataque"]
-
-            atributos.forEach(attr => {
+            ATRIBUTOS.forEach(attr => {
 
                 if(attr == "foto" && carta.foto){
                     let div = document.createElement("div")
@@ -156,15 +154,13 @@ async function verificarCartaPrincipalCartaResposta(resposta) {
 }
 
 async function verificarCaracteristicasCartaPrincipalCartaResposta(cartaAtual) {
-        const atributos = ["genero", "tipo", "raridade", "elixir", "lancamento", "arena", "ataque"]
         const atributosCorretos = []
 
-        atributos.forEach(attr => {
+        ATRIBUTOS.forEach(attr => {
             if(cartaAtual[attr] === cartaPrincipal[attr]) {
                 atributosCorretos.push(attr)
             }
         }) 
-        // console.log(atributosCorretos)
         return atributosCorretos
 }
 
